@@ -1,0 +1,168 @@
+html,body{
+	height: 100%;
+	background: url(../img/网易严选.png)top center no-repeat;
+	background-size: 100%
+}
+.mask{
+	height:7000px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.8);
+
+}
+.box{
+	width: 384.4px;
+	height: 444px;
+	position: fixed;
+	left: 50%;
+	top: 20%;
+	margin-left: -192px;
+	/*background: url(../img/story.gif)top no-repeat;*/
+	background-color: #fff ;
+}
+.box>a>i{
+	position: absolute;
+	right: 10px;
+	top:10px;
+	color: #ccc;
+	font-size: 28px;
+}
+.wrap{
+	width: 304px;
+	margin: 0 auto;
+}
+.header{
+	box-sizing: border-box;
+	height: 60px;
+	padding: 30px 0 10px;
+	/*background-color: #ccc;*/
+	display: flex;
+	justify-content:space-between;
+}
+.header-left{
+	/*display: flex;*/
+	border-right: 1px solid #ccc;
+	padding-right: 3.7em;
+	padding-bottom: -5px;
+}
+.header>:first-child a{
+	font-size: 18px;
+	margin-left: 15px;
+}
+.header>:last-child a{
+	font-size: 18px;
+	margin-right: 15px;
+	color: #999999
+}
+.header>:last-child a:hover{
+	color: #d5c095
+}
+.middle-part{
+	box-sizing: border-box;
+	width: 300px;
+	height: 291px;
+	margin-top: 10px;
+}
+.secret a:hover{
+	color: #d5c095
+}
+.secret{
+	position: relative;
+	right: -70%;
+	margin-bottom: 5px;
+	font-size: 12px;	
+}
+.secret{
+	content: "";
+	display: block;
+	clear: both;
+}
+.number{
+	width: 300px;
+	height: 36px;
+	border: 1px solid #ededed
+}
+.number i{
+	font-size: 24px;
+	line-height: 36px;
+	color: #ccc;
+	margin-left: 5px;
+	padding-right: 2px;
+	border-right: 1px solid #ccc
+}
+.number input{
+	border: none;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 5px 30px 0 5px;
+	color: #ccc;
+}
+.pin{
+	margin:16px 0;
+}
+.VerCode{
+	width: 300px;
+	height: 36px;
+	border: 1px solid #ededed
+}
+.VerCode>:first-child{
+	border: none;
+	font-size: 14px;
+	line-height: 18px;
+	padding: 7px 10px 7px 5px;
+	color: #ccc;
+}
+.VerCode>:last-child{
+	position: absolute;
+	right: 42px;
+	font-size: 14px;
+	line-height: 18px;
+	padding:9px;
+	color: #000;
+	border: none;
+}
+.VerCode>:last-child:hover{
+	color: #d5c095
+
+}
+.Signin{
+	height: 48px;
+/*	background: url(../img/花儿.gif)left;
+	background-size:25% 100%;*/
+	/*background-image:linear-gradient(0deg, #ecd9b2,#b4a078,#ecd9b2,#b4a078);*/
+	margin:35px 0 ;
+	background-color: #b4a078;
+	text-align: center;
+	line-height: 48px;
+	font-size: 18px;
+	border-radius: 3px;
+}
+.Signin a{
+	color: #fff;
+	letter-spacing: 5px;
+}
+.footer{
+	margin-top: 33px;
+	height: 50px;
+	background-color: #F5F3EF;
+	line-height: 50px;
+	padding-left: 38px;
+}
+.footer a:hover{
+	color: #d5c095
+}
+.footer i:hover{
+	color: #d5c095
+}
+.footer i{
+	font-size: 26px;
+	margin-right: 10px;
+	color: #999999;
+}
+.footer>:nth-child(5){
+	margin-left: 20px;
+}
+.footer>:nth-child(4)~*{
+	font-size: 12px;
+	margin-right: 10px;
+	color: #999999;
+}

@@ -1,0 +1,147 @@
+html,body{
+	height: 100%;
+	background: url(../img/网易严选.png)top center no-repeat;
+}
+.mask{
+	height:7000px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.8);
+
+}
+.box{
+	width: 384.4px;
+	height: 352px;
+	position: fixed;
+	left: 50%;
+	top: 20%;
+	margin-left: -192px;
+	/*background: url(../img/story.gif)top no-repeat;*/
+	background-color: #fff ;
+}
+.box>a>i{
+	position: absolute;
+	right: 10px;
+	top:10px;
+	color: #ccc;
+	font-size: 28px;
+}
+.wrap{
+	width: 304px;
+	margin: 0 auto;
+}
+.header{
+	box-sizing: border-box;
+	height: 60px;
+	padding: 30px 0 10px;
+	/*background-color: #ccc;*/
+	display: flex;
+	justify-content:space-between;
+}
+.header-left{
+	/*display: flex;*/
+	border-right: 1px solid #ccc;
+	padding-right: 3.7em;
+	padding-bottom: -5px;
+}
+.header>:first-child a{
+	font-size: 18px;
+	margin-left: 15px;
+	color: #999999
+}
+.header>:last-child a{
+	font-size: 18px;
+	margin-right: 15px;
+}
+.header>:first-child a:hover{
+	color: #d5c095
+}
+.middle-part{
+	box-sizing: border-box;
+	width: 300px;
+	height: 291px;
+	margin-top: 10px;
+}
+.number1{
+	width: 300px;
+	height: 36px;
+	margin: 45px 0 15px;
+	border: 1px solid #ededed
+}
+.number1 i{
+	font-size: 24px;
+	line-height: 36px;
+	color: #ccc;
+	margin-left: 5px;
+	padding-right: 5px;
+	border-right: 1px solid #ededed
+}
+.number1 input{
+	border: none;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 5px 30px 0 5px;
+	color: #ccc;
+}
+.number2{
+	width: 300px;
+	height: 36px;
+	border: 1px solid #ededed
+}
+.number2 i{
+	font-size: 24px;
+	line-height: 36px;
+	color: #ccc;
+	margin-left: 5px;
+	padding-right: 5px;
+	border-right: 1px solid #ededed
+}
+.number2 input{
+	border: none;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 5px 30px 0 5px;
+	color: #ccc;
+}
+.Signin{
+	height: 48px;
+/*	background: url(../img/花儿.gif)left;
+	background-size:25% 100%;*/
+	/*background-image:linear-gradient(0deg, #ecd9b2,#b4a078,#ecd9b2,#b4a078);*/
+	margin:35px 0 ;
+	background-color: #b4a078;
+	text-align: center;
+	line-height: 48px;
+	font-size: 18px;
+	border-radius: 3px;
+}
+.Signin a{
+	color: #fff;
+	letter-spacing: 5px;
+}
+.footer{
+	margin-top: -50px;
+	height: 60px;
+	background-color: #F5F3EF;
+	line-height: 60px;
+	padding-left: 38px;
+}
+.footer a:hover{
+	color: #d5c095
+}
+.footer i:hover{
+	color: #d5c095
+}
+.footer i{
+	font-size: 26px;
+	margin-right: 10px;
+	color: #999999;
+}
+.footer>:nth-child(5){
+	margin-left: 40px;
+}
+.footer>:nth-child(4)~*{
+	font-size: 12px;
+	margin-right: 10px;
+	color: #999999;
+	line-height: 50px; 	
+}

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车 - 网易严选</title>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="font/iconfont.css">
+	<link rel="stylesheet" href="font/css/font-awesome.css">
+	<link rel="stylesheet" href="css/gouwuche.css">
+	<link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+	<link rel="icon" href="img/嘻哈.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="DLJM/css/iconfont.css">
+	<style>
+		.products{
+			width: 1090px;
+			margin: 1em auto;
+		}
+		.products::after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.pp {
+			margin-bottom: 20px
+		}
+		.pp a{
+			font-size: 28px ;
+			font-weight: bold;
+		}
+		.gd{
+			position: relative;
+			right: -650px
+		}
+		/*nav导航菜单*/
+		.header{
+			position: relative;
+		}
+		.header-wrap {
+			width: 1090px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.header-uuwrap{
+			width: 1090px;
+			margin: 0 auto;
+		}
+		.nav::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav{
+			padding-bottom: 20px;
+			display: flex;
+			justify-content: space-between;
+			
+		}
+
+		.nav > li {
+			font-size: 16px;
+			font-weight: bold;
+			float:left;
+			text-align: center;
+			height: 30px
+			
+		}
+		#one a{
+			color: #b4a078;
+		}
+		#one>a::after{
+			content: "";
+			/*display: block;*/
+			height: 2px;
+			background-color: #b4a078;
+			width: 2em;
+			margin: 0 auto;
+			position: relative;
+			/*bottom: -1px;*/
+			/*z-index: 2;*/
+			display: block;
+		}
+		.nav > li > a::after {
+			content: "";
+			/*display: block;*/
+			height: 2px;
+			background-color: #b4a078;
+			width: 2em;
+			margin: 0 auto;
+			position: relative;
+			display: none;
+		}
+		.nav > li:hover > a {
+			color: #b4a078;
+		}
+		.nav > li:hover > a::after {
+			display: block;
+		}
+		.nav > li:hover > .sub-nav{
+			display: block;
+		}
+		.sub-nav {
+			position: absolute;
+			background-color: #ffffff;
+			width: 100%;
+			left: 0;
+			text-align: left;
+			display: none;
+			z-index: 20;
+
+		}
+		.sub-nav > ul {
+			width: 1090px;
+			margin:15px auto;
+			display: flex;
+			justify-content: flex-start;
+			flex-flow: wrap;
+			text-align: center;
+			line-height: 25px;
+			margin-bottom: 25px
+		}
+		.sub-nav > ul >li{
+			width:150px
+
+		}
+		.aside{
+			background-color: #ffffff;
+			width: 73px;
+			position: fixed;
+			right: 0;
+			top: 150px;
+			text-align: center;
+			z-index: 20;
+		}
+		.aside>ul>li{
+			height: 80px;
+			color: #666666;
+			
+		}
+		.aside>ul>li:hover .tip{
+			display: block;
+		}
+		.aside .tip{
+			width: 464px;
+			height: 276px;
+			background-color: #fff;
+			position: absolute;
+			right: 110%;
+			top: 150px;
+			display: none;
+		}
+		.yx{
+			height: 87px;
+			background: url(img/yx.png)center no-repeat;
+			background-size:100% 100%;
+			/*background-color: red*/
+		}
+		.yx p{
+			font-size: 32px;
+			padding-top: 20px;
+			color: #ffffea;
+		}
+		.dy{
+			height: 64px;
+			margin-top: 20px
+		}
+		.dy p{
+			font-size: 18px;
+		}
+		.dy input{
+			margin-top: 16px;
+			width: 257px;
+			height: 42px;
+		}
+		.dy a{
+			color: #ffffff;
+			background-color: #b4a078;
+			padding: 1em;
+		}
+		.dd{
+			position: relative;
+			left: 50%;
+			bottom: -60px;
+			margin-left: -450px;
+			font-size: 16px;
+			color:#ceac78;
+
+		}
+
+		.aside>ul>:first-child{
+			background: url(img/gif.gif)top center no-repeat;
+			height: 130px;
+		}
+		.aside>ul>li{
+			padding-top: 15px;
+			border-bottom:  1px solid #ededed;
+		}
+		.aside li:hover>a,.aside li:hover i{
+			color: #b4a078;
+		}
+		.icon-liwu,.icon-dingyue,.icon-kefu,.icon-label{
+			font-size: 36px;
+			color: #666666;
+		}
+		.hhd{
+			height: 36px;
+			background-color: #333333;
+			min-width: 1090px;
+		}
+		.wrap1{
+			width: 1090px;
+			margin: 0 auto;
+		}
+		.wrap1 div{
+			float: left;
+
+		}
+		.wrap1::after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.wrap1:first-child>a{
+			width: 108px;
+			color: white;
+		}
+		.wrap1:first-child{
+			line-height: 36px;
+			font-size: 12px;
+		}
+		.wrap1:nth-child(2){
+			width: 277px;
+			/*transition:*/
+		}
+		.wrap1 ul>li{
+			float: left;
+			text-align:center;
+		}
+		.llb{
+			margin-left: 700px;
+			display: flex;
+			justify-content: space-around;
+		}
+		.lb2{
+			/*width: 75px;*/
+			height: 161px;
+			position: absolute;
+			/*box-shadow: 3px 0 3px 3px black;*/
+			display: none;
+			text-align: center;
+		}
+		.kh{
+			position: relative;
+			z-index: 99
+		}
+		.sj{
+			position: absolute;
+			height: 20px;
+			width: 20px;
+			right: 20px;
+			top: 33px;
+			background-color: white;
+			transform: rotate(45deg);
+			display: none;
+
+		}
+		.lb2 li{
+			height: 40px;
+			width: 70px;
+			border-bottom:1px solid #ccc;
+			border-left:1px solid #ccc;
+			background-color: white;
+			/*display: none;*/
+		}
+		.lb2 li:last-child{
+			border-bottom:none;
+		}
+		.llb li:hover>.sj{
+			display: block;
+		}
+		.llb li:hover>.lb2{
+			display: block;
+			box-shadow: 2px 2px 2px 2px #ccc;
+		}
+		.llb li:hover i.fa{
+			transform: rotate(180deg);
+
+		}
+		.hhd a{
+			color: #cccccc;
+		}
+		.hhd a:hover{
+			color: white;
+		}
+		.lb2 a:hover{
+			color: #e5ce9f;
+		}
+		.wyyx{
+			height: 160px;
+			/*background-color: #ccc;*/
+			width: 1090px;
+			margin:0 auto;
+			text-align:center;
+		}
+		.wyyx img{
+			margin-top: 50px;
+		}
+		
+	</style>
+	<script src="js/script.js"></script>
+</head>
+<body min-width= '1024px'>
+	<!-- html大容器 -->
+	<div class="container">
+		<!-- 顶头header -->
+		<div class="hhd">
+			<div class="wrap1">
+				<div><a href="#">好的生活,没那么贵</a></div>
+				<div><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/ggf.gif" alt="">&nbsp;&nbsp;【福利】下载严选APP，抢1元包邮团，领...</a></div>
+				<ul class="llb">
+					<li><a href="DLJM/dljm.html">登录</a></li>
+					<li><a href="#">注册</a></li>
+					<li><a href="#">我的订单</a></li>
+					<li><a href="#">会员</a></li>
+					<li><a href="#">甄选家</a></li>
+					<li class="kh"><a href="#">客户服务<i class="fa fa-chevron-up"></i></a>
+						<div class="sj"></div>
+						<ul class="lb2">
+							<li><a href="#">在线客服</a></li>
+							<li><a href="#">帮助中心</a></li>
+							<li><a href="#">商务合作</a></li>
+							<li><a href="#">开放平台</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		<!-- 顶头heade结束 -->
+		</div>
+		<!-- 头部开始 -->
+		<div class="header">
+			<div class="header-wrap">
+				<div class="wyyx  animated rollIn">
+					<img src="img/yyx.png" alt="">
+				</div>
+				<div class="search">
+					<div class="search1">
+						<input type="text" list="itemlist" placeholder="搜你所喜 搜你所爱">
+						<datalist id="itemlist">
+						    <option>3c新品买一享一</option>
+						    <option>七夕返厂0元领</option>
+						    <option>开学季折上折</option>
+						    <option>服装热销榜</option>
+						</datalist>
+					</div>
+					<div class="search2"><i class="iconfont"> &#xe663;</i></div>
+					<div class="search3">
+						<p>3</p>
+						<i class="iconfont"> &#xe606;</i>
+						<div>
+							<img src="img/二级菜单.png" alt="" width="95%">
+							<a href="gouwuche.html"><div class="xiu"></div></a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="header-uuwrap">
+				<ul class="nav" >
+					<li id="one">
+						<a href="wyyx.html">首页</a>
+					</li>
+					<li>
+						<a href="#">居家</a>
+						<div class="sub-nav  animated">
+							<ul>
+								<li><a href="#"><img src="img/xl.png" vspace="10px"><br>夏凉</a></li>
+								<li><a href="#"><img src="img/bz.png" vspace="10px"><br>床品被套</a></li>
+								<li><a href="#"><img src="img/zt.png" vspace="10px"><br>被枕</a></li>
+								<li><a href="#"><img src="img/jj.png" vspace="10px"><br>家具</a></li>
+								<li><a href="#"><img src="img/dj.png" vspace="10px"><br>灯具</a></li>
+								<li><a href="#"><img src="img/sn.png" vspace="10px"><br>收纳</a></li>
+								<li><a href="#"><img src="img/by.png" vspace="10px"><br>布衣软装</a></li>
+								<li><a href="#"><img src="img/jjj.png" vspace="10px"><br>家饰</a></li>
+								<li><a href="#"><img src="img/lxyp.png" vspace="10px"><br>旅行用品</a></li>
+								<li><a href="#"><img src="img/ls.png" vspace="10px"><br>晾晒除味</a></li>
+								<li><a href="#"><img src="img/jt.png" vspace="10px"><br>家庭医疗</a></li>
+								<li><a href="#"><img src="img/cw.png" vspace="10px"><br>宠物</a></li>
+
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">鞋包配饰</a>
+						<div class="sub-nav animated">
+							<ul>
+								<li><a href="#"><img src="img/1234_03.png" vspace="10px"><br>行李箱</a></li>
+								<li><a href="#"><img src="img/1234_05.png" vspace="10px"><br>女士包袋</a></li>
+								<li><a href="#"><img src="img/1234_07.png" vspace="10px"><br>男士包袋</a></li>
+								<li><a href="#"><img src="img/1234_09.png" vspace="10px"><br>钱包及小皮件</a></li>
+								<li><a href="#"><img src="img/1234_11.png" vspace="10px"><br>女鞋</a></li>
+								<li><a href="#"><img src="img/1234_13.png" vspace="10px"><br>男鞋</a></li>
+								<li><a href="#"><img src="img/1234_15.png" vspace="10px"><br>拖鞋</a></li>
+								<li><a href="#"><img src="img/1234_24.png" vspace="10px"><br>鞋配</a></li>
+								<li><a href="#"><img src="img/1234_25.png" vspace="10px"><br>袜子</a></li>
+								<li><a href="#"><img src="img/1234_26.png" vspace="10px"><br>丝袜</a></li>
+								<li><a href="#"><img src="img/1234_27.png" vspace="10px"><br>配饰</a></li>
+								<li><a href="#"><img src="img/1234_28.png" vspace="10px"><br>眼镜</a></li>
+								<li><a href="#"><img src="img/1234_29.png" vspace="10px"><br>围巾件套</a></li>
+
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">服装</a>
+						<div class="sub-nav">
+							<ul>
+								<li><a href="#"><img src="img/qq (1).png" vspace="10px"><br>Yessing轻运动</a></li>
+								<li><a href="#"><img src="img/qq (2).png" vspace="10px"><br>T恤</a></li>
+								<li><a href="#"><img src="img/qq (3).png" vspace="10px"><br>运动</a></li>
+								<li><a href="#"><img src="img/qq (4).png" vspace="10px"><br>牛仔</a></li>
+								<li><a href="#"><img src="img/qq (5).png" vspace="10px"><br>女式上装</a></li>
+								<li><a href="#"><img src="img/qq (6).png" vspace="10px"><br>女式外套</a></li>
+								<li><a href="#"><img src="img/qq (7).png" vspace="10px"><br>女士下装</a></li>
+								<li><a href="#"><img src="img/qq (8).png" vspace="10px"><br>男士上装</a></li>
+								<li><a href="#"><img src="img/qq (9).png" vspace="10px"><br>男士下装</a></li>
+								<li><a href="#"><img src="img/qq (10).png" vspace="10px"><br>男士外套</a></li>
+								<li><a href="#"><img src="img/qq (11).png" vspace="10px"><br>男士内衣内裤</a></li>
+								<li><a href="#"><img src="img/qq (12).png" vspace="10px"><br>女式内衣内裤</a></li>
+								<li><a href="#"><img src="img/qq (13).png" vspace="10px"><br>男士家居服</a></li>
+								<li><a href="#"><img src="img/qq (14).png" vspace="10px"><br>女士家居服</a></li>
+
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">电器</a>
+						<div class="sub-nav">
+							<ul>
+								<li><a href="#"><img src="img/ww_03.png" vspace="10px"><br>生活电器</a></li>
+								<li><a href="#"><img src="img/ww_05.png" vspace="10px"><br>厨房电器</a></li>
+								<li><a href="#"><img src="img/ww_07.png" vspace="10px"><br>个护健康</a></li>
+								<li><a href="#"><img src="img/ww_09.png" vspace="10px"><br>数码</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">洗护</a>
+						<div class="sub-nav">
+							<ul>
+								<li><a href="#"><img src="img/ee_03.png" vspace="10px"><br>纸品湿巾</a></li>
+								<li><a href="#"><img src="img/ee_05.png" vspace="10px"><br>家庭清洁</a></li>
+								<li><a href="#"><img src="img/ee_07.png" vspace="10px"><br>生理用品</a></li>
+								<li><a href="#"><img src="img/ee_09.png" vspace="10px"><br>浴室用具</a></li>
+								<li><a href="#"><img src="img/ee_11.png" vspace="10px"><br>毛巾</a></li>
+								<li><a href="#"><img src="img/ee_11.png" vspace="10px"><br>美妆</a></li>
+								<li><a href="#"><img src="img/ee_11.png" vspace="10px"><br>香氛</a></li>
+								<li><a href="#"><img src="img/ee_24.png" vspace="10px"><br>面部口腔护理</a></li>
+								<li><a href="#"><img src="img/ee_25.png" vspace="10px"><br>身体护理</a></li>
+								<li><a href="#"><img src="img/ee_26.png" vspace="10px"><br>洗发护发</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">饮食</a>
+						<div class="sub-nav">
+							<ul>
+								<li><a href="#"><img src="img/r_03.png" vspace="10px"><br>甜品鲜花</a></li>
+								<li><a href="#"><img src="img/r_05.png" vspace="10px"><br>糕点</a></li>
+								<li><a href="#"><img src="img/r_07.png" vspace="10px"><br>小食</a></li>
+								<li><a href="#"><img src="img/r_09.png" vspace="10px"><br>坚果炒货</a></li>
+								<li><a href="#"><img src="img/r_11.png" vspace="10px"><br>果干</a></li>
+								<li><a href="#"><img src="img/r_13.png" vspace="10px"><br>肉类零食</a></li>
+								<li><a href="#"><img src="img/r_15.png" vspace="10px"><br>冲饮</a></li>
+								<li><a href="#"><img src="img/r_24.png" vspace="10px"><br>茗茶</a></li>
+								<li><a href="#"><img src="img/r_25.png" vspace="10px"><br>酒水饮料</a></li>
+								<li><a href="#"><img src="img/r_26.png" vspace="10px"><br>方便食品</a></li>
+								<li><a href="#"><img src="img/r_27.png" vspace="10px"><br>食材</a></li>
+								<li><a href="#"><img src="img/r_28.png" vspace="10px"><br>调味</a></li>
+								<li><a href="#"><img src="img/r_29.png" vspace="10px"><br>滋补保健</a></li>
+								<li><a href="#"><img src="img/r_30.png" vspace="10px"><br>生鲜</a></li>
+
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">餐厨</a>
+						<div class="sub-nav">
+							<ul>
+								<li><a href="#"><img src="img/cc_03.png" vspace="10px"><br>水具杯壶</a></li>
+								<li><a href="#"><img src="img/cc_05.png" vspace="10px"><br>餐具</a></li>
+								<li><a href="#"><img src="img/cc_07.png" vspace="10px"><br>锅具</a></li>
+								<li><a href="#"><img src="img/cc_09.png" vspace="10px"><br>清洁保鲜</a></li>
+								<li><a href="#"><img src="img/cc_11.png" vspace="10px"><br>厨房配件</a></li>
+								<li><a href="#"><img src="img/cc_13.png" vspace="10px"><br>刀剪砧板</a></li>
+								<li><a href="#"><img src="img/cc_15.png" vspace="10px"><br>茶具咖啡具酒具</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">婴童</a>
+						<div class="sub-nav">
+							<ul>
+								<li><a href="#"><img src="img/yt_03.png" vspace="10px"><br>暑期好物</a></li>
+								<li><a href="#"><img src="img/yt_05.png" vspace="10px"><br>新生儿服装</a></li>
+								<li><a href="#"><img src="img/yt_07.png" vspace="10px"><br>小童服装</a></li>
+								<li><a href="#"><img src="img/yt_09.png" vspace="10px"><br>中大童装服装</a></li>
+								<li><a href="#"><img src="img/yt_11.png" vspace="10px"><br>内衣搭配</a></li>
+								<li><a href="#"><img src="img/yt_13.png" vspace="10px"><br>童鞋童包</a></li>
+								<li><a href="#"><img src="img/yt_15.png" vspace="10px"><br>婴童洗护</a></li>
+								<li><a href="#"><img src="img/yt_24.png" vspace="10px"><br>孕产</a></li>
+								<li><a href="#"><img src="img/yt_25.png" vspace="10px"><br>寝居</a></li>
+								<li><a href="#"><img src="img/yt_26.png" vspace="10px"><br>喂养</a></li>
+								<li><a href="#"><img src="img/yt_27.png" vspace="10px"><br>玩具</a></li>
+								<li><a href="#"><img src="img/yt_28.png" vspace="10px"><br>婴童出行</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">文体</a>
+						<div class="sub-nav">
+							<ul>
+								<li><a href="#"><img src="img/wt_03.png" vspace="10px"><br>文具</a></li>
+								<li><a href="#"><img src="img/wt_05.png" vspace="10px"><br>运动户外</a></li>
+								<li><a href="#"><img src="img/wt_07.png" vspace="10px"><br>唱片</a></li>
+								<li><a href="#"><img src="img/wt_09.png" vspace="10px"><br>礼品卡</a></li>
+								<li><a href="#"><img src="img/wt_11.png" vspace="10px"><br>游戏点卡</a></li>
+								<li><a href="#"><img src="img/wt_13.png" vspace="10px"><br>暴雪周边</a></li>
+								<li><a href="#"><img src="img/wt_15.png" vspace="10px"><br>我的世界</a></li>
+								<li><a href="#"><img src="img/wt_24.png" vspace="10px"><br>梦幻西游</a></li>
+								<li><a href="#"><img src="img/wt_25.png" vspace="10px"><br>大话西游</a></li>
+								<li><a href="#"><img src="img/wt_26.png" vspace="10px"><br>阴阳师</a></li>
+								<li><a href="#"><img src="img/wt_27.png" vspace="10px"><br>游戏表情</a></li>
+								<li><a href="#"><img src="img/wt_28.png" vspace="10px"><br>影视周边</a></li>
+								<li><a href="#"><img src="img/wt_29.png" vspace="10px"><br>动漫电玩</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">特色区</a>
+						<div class="sub-nav">
+							<ul>
+								<li><a href="#"><img src="img/tsq_03.png" vspace="10px"><br>日本馆</a></li>
+								<li><a href="#"><img src="img/tsq_05.png" vspace="10px"><br>韩国馆</a></li>
+								<li><a href="#"><img src="img/tsq_07.png" vspace="10px"><br>东南亚馆</a></li>
+								<li><a href="#"><img src="img/tsq_09.png" vspace="10px"><br>欧美馆</a></li>
+								<li><a href="#"><img src="img/tsq_11.png" vspace="10px"><br>澳新馆</a></li>
+								<li><a href="#"><img src="img/tsq_13.png" vspace="10px"><br>制造馆</a></li>
+								<li><a href="#"><img src="img/tsq_15.png" vspace="10px"><br>春风馆</a></li>
+								<li><a href="#"><img src="img/tsq_24.png" vspace="10px"><br>味央馆</a></li>
+								<li><a href="#"><img src="img/tsq_25.png" vspace="10px"><br>云音乐周边馆</a></li>
+								<li><a href="#"><img src="img/tsq_26.png" vspace="10px"><br>YESSING馆</a></li>
+								<li><a href="#"><img src="img/tsq_27.png" vspace="10px"><br>严选推荐馆</a></li>
+
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">为你严选</a>
+					</li>
+					<li>
+						<a href="#">众筹</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 头部结束 -->
+		</div>
+		<div class="gouwuche">
+			<div class="gwrap">
+				<div class="gou1">
+					<p><i class="iconfont">&#xe604;</i>购物车可领优惠券</p>
+					<p><a href="">查看优惠券<i class="iconfont">&#xe605;</i></a></p>
+				</div>
+				<div class="gou2">
+					<div>
+						<input type="checkbox" checked="checked">
+						<span>全选</span>
+					</div>
+					<div>商品信息</div>
+					<div>单价</div>
+					<div>数量</div>
+					<div>小计</div>
+					<div>操作</div>
+				</div>
+				<div class="gou3">
+					<span>全场加价购</span>
+					<span>已满足【满499可享7.7元换购】，再加<span>398.00</span> 元满足【满999可享7.7元换购】</span>
+					<div><a href="#">去购物</a></div>
+					<a href="#">继续凑单>></a>
+				</div>
+				<div class="gou4" id="remove">
+					<div class="gg4">
+						<div><input type="checkbox" checked="checked"></div>
+						<div>
+							<div><img src="img/Yessing男式高支高密圆领T恤.jpg" alt="" width="100%"></div>
+							<div>
+								<div class="gaozhi"><a href="#">Yessing男式高支高密圆领T恤</a></div><br>
+								<span>Yessing蓝 L(175/92A) <i class="iconfont">&#xe605;</i><span>
+							</div>
+						</div>
+						<div><span>¥109.00</span></div>
+						<div class="jiaj">
+							<span>-</span>
+							<input type="text" placeholder="1">
+							<span>+</span>
+						</div>
+						<div>¥109.00</div>
+						<div>
+							<a href="#">移入收藏夹</a>
+							<br>
+							<a href="#">删除</a>
+						</div>
+					</div>
+					<div class="gg4">
+						<div><input type="checkbox" checked="checked"></div>
+						<div>
+							<div><img src="img/士兵76 粘土人手办 守望先锋.png" alt=""  width="100%"></div>
+							<div>
+								<div class="gaozhi"><a href="#">士兵76 粘土人手办 守望先锋</a></div><br>
+								<span>士兵76 <i class="iconfont">&#xe605;</i><span>
+							</div>
+						</div>
+						<div><span>¥293.00</span></div>
+						<div class="jiaj">
+							<span>-</span>
+							<input type="text" placeholder="1">
+							<span>+</span>
+						</div>
+						<div>¥293.00</div>
+						<div>
+							<a href="#">移入收藏夹</a>
+							<br>
+							<a href="#">删除</a>
+						</div>
+					</div>
+					<div class="gg4">
+						<div><input type="checkbox" checked="checked"></div>
+						<div>
+							<div><img src="img/充电宝 炉石传说.png" alt="" width="100%"></div>
+							<div>
+								<div class="gaozhi"><a href="#">充电宝 炉石传说</a></div><br>
+								<span>充电宝 <i class="iconfont">&#xe605;</i><span>
+							</div>
+						</div>
+						<div><span>¥199.00</span></div>
+						<div class="jiaj">
+							<span>-</span>
+							<input type="text" placeholder="1">
+							<span>+</span>
+						</div>
+						<div>¥199.00</div>
+						<div>
+							<a href="#">移入收藏夹</a>
+							<br>
+							<a href="#">删除</a>
+						</div>
+					</div>
+				</div>
+				<div class="gou5">
+					<div>
+						<input type="checkbox" checked="checked">
+						<span>已选（3）</span>
+						<span id="span">批量删除</span>
+						<span><a href="">清空失效商品</a></span>
+					</div>
+			
+					<div>
+						<div class="shangp">
+							<span>商品合计 : </span>
+							<span>¥601.00</span>
+						</div>
+						<span>活动优惠 : </span>
+						<span>-¥0.00</span>
+					</div>
+					<div>
+						<div class="zongj">
+							<span>应付总额：</span>
+							<span>¥ 601.00</span>
+						</div>
+						<div><a href="#">已满足免邮条件></a></div>
+					</div>
+					<div>下单</div>
+				</div>
+				<div class="gou6">
+									<div class="dajiadzk">
+					<div class="s-wrap">
+						<div class="shenghuo">
+							<p>猜你喜欢</p>
+						</div>
+						<div class="xiaowp">
+							<ul>
+								<li>
+									<div class="kuli-t"></div>
+									<div class="kuli-b">
+										<div>
+											<div class="bqian"><a href="#">6色可选</a></div>
+											<img src="img/苦力.png" alt="">
+										</div>
+										<div>苦力怕充电宝 我的世界</div>
+										<div>￥199 <i class="iconfont">&#xe602;</i></div>
+									</div>
+								</li>
+								<li>
+									<div class="kuli-t"></div>
+									<div class="kuli-b">
+										<div><div class="bqian"><a href="#">12色可选</a></div><img src="img/小猪.png" alt=""></div>
+										<div>小猪充电宝 我的世界</div>
+										<div>￥199 <i class="iconfont">&#xe602;</i></div>
+									</div>
+								</li>
+								<li>
+									<div class="kuli-t"></div>
+									<div class="kuli-b">
+										<div><div class="bqian"><a href="#">18色可选</a></div><img src="img/死亡.png" alt=""></div>
+										<div>死亡骑士军团 鼠标垫 炉石传说</div>
+										<div>￥69 <i class="iconfont">&#xe602;</i></div>
+									</div>
+								</li>
+								<li>
+									<div class="kuli-t"></div>
+									<div class="kuli-b">
+										<div><div class="bqian"><a href="#">24色可选</a></div><img src="img/对抗.png" alt=""></div>
+										<div>对抗玛洛加尔领主 鼠标垫 炉...</div>
+										<div>¥69 <i class="iconfont">&#xe602;</i></div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				<!-- 大家都在看结束 -->
+				</div>
+				</div>
+			</div>
+		</div>
+				<div class="aside">
+			<ul>
+				<li>					</li>
+				<li><a href="#"><i class="iconfont icon-liwu"></i><br><span>新人有礼</span></a></li>
+				<li>
+					<a href="#"><i class="iconfont icon-dingyue"></i><br>订阅电子刊</a>
+					<div class="tip animated flipInX">
+						<div class="yx">
+							<p>严选生活美学</p>
+						</div>
+						<div class="dy">
+							<p>订阅电子刊，第一时间获取严选最新资讯</p>
+							<input type="text" name="tname" placeholder="输入您的电子邮件"><a href="#">立即订阅</a>
+						</div>
+						<span class="dd"><span><img src="img/dior1.png" alt="">专属优惠</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><img src="img/dior2.png" alt="">尊享优先购</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><img src="img/dior3.png" alt="">好货不错过</span></span>
+					</div>
+				</li>
+				<li><a href="#"><i class="iconfont icon-kefu"></i><br>在线客服</a></li>
+			</ul>
+		<!-- 右侧固定栏4结束-->
+		</div>
+			<!-- 客服开始 -->
+		<div class="kehufw">
+			<div class="kk1">
+				<h3>客户服务</h3>
+				<div class="zaix">
+					<div class="zai1">
+						<a href="#"><i class="iconfont icon-kefu"></i><br>在线客服</a>
+					</div>
+					<div class="zai2">
+						<a href="#"><i class="iconfont icon-dingyue"></i><br>用户反馈</a></div>
+				</div>
+			</div>
+			<div class="kk2">
+				<h3>何为严选</h3>
+				<p>网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</p>
+				<p>关注我们：<img src="img/图层 2.png" alt="444">
+				<img src="img/图层 3.png" alt="">
+				<img src="img/图层 4.png" alt=""></p>
+			</div>
+			<div class="kk3" id="kk3">
+				<h3>扫码下载严选APP</h3>
+				<a href="#"><img src="img/canvas.png" alt="444"></a>
+				<p>下载领1000元新人礼包</p>
+			</div>
+		<!-- 客服结束 -->
+		</div>
+		<!-- footer开始 -->
+		<div class="footer">
+			<div class="uwrap">
+				<ul class="day30">
+					<li><i><img src="img/盾.png" alt="" width="80%"></i>
+						<p>30天无忧退换货</p>
+					</li>
+					<li><i><img src="img/车.png" alt="" width="80%"></i>
+						<p>满88元免邮费</p>
+					</li>
+					<li><i><img src="img/易.png" alt="" width="80%"></i>
+						<p>网易品质保证</p>
+					</li>
+					
+				</ul>
+				<ul class="xiaozi">
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li><a href="#">售后服务</a></li>
+					<li><a href="#">配送与验收</a></li>
+					<li><a href="#">商务合作</a></li>
+					<li><a href="#">企业采购</a></li>
+					<li><a href="#">开放平台</a></li>
+					<li><a href="#">搜索推荐</a></li>
+					<li><a href="#">友情链接</a></li>
+				</ul>
+				<p class="food">网易公司版权所有 © 1997-2018   食品经营许可证：JY13301080111719 出版物经营许可证：新出发滨字第0132号 单用途商业预付卡备案证：330100AAC0024</p>
+				<p><img src="img/徽章.gif" alt="" width="38px"></p>
+			</div>
+		</div>
+
+		
+	<!-- 容器结束	 -->
+	</div>
+	
+</body>
+</html>
